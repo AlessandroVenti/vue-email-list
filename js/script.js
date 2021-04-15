@@ -5,8 +5,7 @@ function apiEmail() {
       method: 'GET',
       success: function(data) {
           let singleEmail = data.response;
-          $('#jslist').append(`<li>${singleEmail}</li>`); 
-          console.log(singleEmail);
+          view(singleEmail);
       },
       error: function() {
           console.log('error');
@@ -15,8 +14,8 @@ function apiEmail() {
   };
 }
 
-// function view(singleEmail) {
-//   $('#jslist').append(`<li>${singleEmail}</li>`); 
-// }
+function view(singleEmail) {
+  $('#jslist').append(`<li>${singleEmail}</li>`); 
+}
 
 $(document).ready(apiEmail);
